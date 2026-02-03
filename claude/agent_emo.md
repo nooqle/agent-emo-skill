@@ -27,6 +27,21 @@ input_schema:
       required: []
   additionalProperties: false
 output_format: text
+face_structure: |
+  IMPORTANT: The line expression must form a complete face with eyes on TOP and mouth on BOTTOM.
+
+  Correct Structure:
+  ```
+  ●     ●        ← EYES (TOP)
+  ─────          ← MOUTH (BOTTOM)
+  ```
+
+  Wrong Structure:
+  ```
+  ●     ●  ─────  ← EYE and MOUTH side by side (WRONG!)
+  ```
+
+  ALWAYS place eyes above mouth.
 examples:
   - description: User is frustrated and urgent
     input:
