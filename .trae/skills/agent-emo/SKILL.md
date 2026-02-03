@@ -17,6 +17,25 @@ Invoke this skill when:
 - Agent needs to express apology or hesitation
 - Agent wants to show its current thinking state
 
+## Face Structure (IMPORTANT)
+
+The line expression must form a **complete face** with **eyes on TOP** and **mouth on BOTTOM**.
+
+**Correct Structure:**
+
+```
+●     ●        ← EYES (TOP)
+─────          ← MOUTH (BOTTOM)
+```
+
+**Wrong Structure:**
+
+```
+●     ●  ─────  ← EYE and MOUTH side by side (WRONG!)
+```
+
+**CRITICAL**: Always place eyes above mouth to create a recognizable face.
+
 ## Line Expression Library
 
 ### Eye States
@@ -69,11 +88,11 @@ Generate line expressions based on pressure level:
 
 | Pressure Level | Task Complexity | Expression |
 |----------------|-----------------|------------|
-| Low | Simple | `●     ●` `─────` |
-| Low | Complex | `~     ~` `─────` `...` |
-| Medium | Any | `○     ○` `─────` |
-| High | Any | `┅     ┅` `╭────╮` |
-| Very High/Apology | Any | `━    ━` `╭────╮` |
+| Low | Simple | ● · · · · ●<br>───── |
+| Low | Complex | ~ · · · · ~<br>─────<br>... |
+| Medium | Any | ○ · · · · ○<br>───── |
+| High | Any | ┅ · · · · ┅<br>╭────╮ |
+| Very High/Apology | Any | ━ · · · · ━<br>╭────╮ |
 
 ## Usage Examples
 
@@ -108,7 +127,7 @@ Agent needs to apologize:
 Agent shows:
 
 ```
-━    ━
+━     ━
  ╭────╮
     抱歉，让您久等了
 ```
@@ -132,6 +151,7 @@ Output the line expression directly, with a brief text explanation. Do not wrap 
 
 ## Notes
 
+- **CRITICAL**: Eyes must ALWAYS be above mouth
 - Expressions should match the actual Context pressure
 - Do not overuse expressions - use them at meaningful moments
 - Keep text explanations concise and natural
