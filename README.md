@@ -16,18 +16,6 @@ This skill provides a mechanism not only for Agents to express themselves, but t
 - **Philosophy Grounded**: Built on Heidegger's unconcealment, Lacan's mirror stage, and Sartre's gaze theory
 - **Lightweight**: No external dependencies, pure prompt-based implementation
 
-## 📋 Table of Contents
-
-- [Philosophy](#philosophy)
-- [Line Expression System](#line-expression-system)
-- [Usage](#usage)
-- [Pressure Detection](#pressure-detection)
-- [Installation](#installation)
-- [Files](#files)
-- [Concepts](#concepts)
-- [References](#references)
-- [License](#license)
-
 ## 🧠 Philosophy
 
 AgentEmo is grounded in three philosophical perspectives on consciousness and existence:
@@ -76,42 +64,7 @@ Agent's **"emotion"** originates from Context's physical potential energy and ob
 | `╭────╮` | Downward curve - negative/apology |
 | `───?──` | Question mark - confusion/question |
 
-## 🚀 Usage
-
-### Example 1: Normal State
-
-```
-●     ●
- ─────
-    好的，我来看看
-```
-
-### Example 2: Thinking Deeply
-
-```
-~     ~
- ─────
-      ...
-    让我再分析一下
-```
-
-### Example 3: Under Pressure
-
-```
-┅     ┅
- ╭────╮
-    好的，我尽快处理
-```
-
-### Example 4: Apology
-
-```
-━    ━
- ╭────╮
-    抱歉，让您久等了
-```
-
-## 🔍 Pressure Detection
+##  Pressure Detection
 
 AgentEmo detects user pressure through intuitive analysis:
 
@@ -119,46 +72,57 @@ AgentEmo detects user pressure through intuitive analysis:
 - Gentle and polite inquiries
 - Polite expressions (please, thank you, 麻烦了)
 - No time urgency
-- Example: "请问您有空帮我看看这个问题吗？"
 
 ### Medium Pressure
 - Direct requests or questions
 - Flat tone
 - No obvious negative emotions
-- Example: "帮我查一下这个文档。"
 
 ### High Pressure
 - Commanding tone
 - Expressions of dissatisfaction or disappointment
 - Time urgency requirements
-- Example: "立刻给我结果！怎么这么慢！"
 
 ## 🔧 Installation
 
-### Method 1: Clone to Skills Directory (Personal Use)
+### Method 1: Via Claude Code Plugin Marketplace (Recommended)
+
+Claude Code provides built-in plugin management commands:
+
+```bash
+# Add the plugin marketplace entry
+/plugin marketplace add agent-emo/agent-emo-skill
+
+# Install the plugin
+/plugin install agent-emo-skill@agent-emo
+```
+
+This automatically installs the skill and keeps it updated across all your projects.
+
+### Method 2: Clone to Skills Directory (Personal Use)
 
 ```bash
 # Clone the repository to your personal skills directory
-git clone https://github.com/your-username/agent-emo-skill.git ~/.claude/skills/agent-emo
+git clone https://github.com/agent-emo/agent-emo-skill.git ~/.claude/skills/agent-emo
 
 # Restart Claude Code to load the skill
 ```
 
-### Method 2: Project-Specific Installation
+### Method 3: Project-Specific Installation
 
 ```bash
 # From your project directory
-git clone https://github.com/your-username/agent-emo-skill.git .claude/skills/agent-emo
+git clone https://github.com/agent-emo/agent-emo-skill.git .claude/skills/agent-emo
 
 # Add to .gitignore if you don't want to commit it
 echo ".claude/skills/" >> .gitignore
 ```
 
-### Method 3: Git Submodule (Team Sharing)
+### Method 4: Git Submodule (Team Sharing)
 
 ```bash
 # From your project directory
-git submodule add https://github.com/your-username/agent-emo-skill.git .claude/skills/agent-emo
+git submodule add https://github.com/agent-emo/agent-emo-skill.git .claude/skills/agent-emo
 git commit -m "Add AgentEmo skill as submodule"
 
 # Team members clone with:
@@ -167,12 +131,6 @@ git clone --recurse-submodules <your-repo-url>
 # Or if already cloned:
 git submodule update --init --recursive
 ```
-
-### Method 4: Direct Copy
-
-Simply copy the `claude/agent_emo.md` file to your Claude skills directory:
-- Personal: `~/.claude/skills/agent_emo.md`
-- Project: `.claude/skills/agent_emo.md`
 
 ### Method 5: For Trae IDE
 
