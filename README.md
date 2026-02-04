@@ -64,7 +64,7 @@ Agent's **"emotion"** originates from Context's physical potential energy and ob
 | `╭────╮` | Downward curve - negative/apology |
 | `───?──` | Question mark - confusion/question |
 
-##  Pressure Detection
+## 🔍 Pressure Detection
 
 AgentEmo detects user pressure through intuitive analysis:
 
@@ -85,63 +85,64 @@ AgentEmo detects user pressure through intuitive analysis:
 
 ## 🔧 Installation
 
-### Method 1: Via Claude Code Plugin Marketplace (Recommended)
+### For Claude Code
 
-Claude Code provides built-in plugin management commands:
+Claude Code loads skills from `.claude/skills/` directory.
 
-```bash
-# Add the plugin marketplace entry
-/plugin marketplace add agent-emo/agent-emo-skill
-
-# Install the plugin
-/plugin install agent-emo-skill@agent-emo
-```
-
-This automatically installs the skill and keeps it updated across all your projects.
-
-### Method 2: Clone to Skills Directory (Personal Use)
+#### Method 1: Clone Repository (Recommended)
 
 ```bash
-# Clone the repository to your personal skills directory
-git clone https://github.com/agent-emo/agent-emo-skill.git ~/.claude/skills/agent-emo
+# Clone the repository
+git clone https://github.com/nooqle/agent-emo-skill.git
 
-# Restart Claude Code to load the skill
+# Copy the skill file to Claude's skills directory
+cp agent-emo-skill/.claude/skills/agent_emo.md ~/.claude/skills/
+
+# Restart Claude Code
 ```
 
-### Method 3: Project-Specific Installation
+#### Method 2: Direct Download
+
+```bash
+# Create skills directory if not exists
+mkdir -p ~/.claude/skills
+
+# Download the skill file directly
+curl -o ~/.claude/skills/agent_emo.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo.md
+
+# Restart Claude Code
+```
+
+#### Method 3: Project-Specific Installation
 
 ```bash
 # From your project directory
-git clone https://github.com/agent-emo/agent-emo-skill.git .claude/skills/agent-emo
+mkdir -p .claude/skills
+curl -o .claude/skills/agent_emo.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo.md
 
 # Add to .gitignore if you don't want to commit it
 echo ".claude/skills/" >> .gitignore
 ```
 
-### Method 4: Git Submodule (Team Sharing)
-
-```bash
-# From your project directory
-git submodule add https://github.com/agent-emo/agent-emo-skill.git .claude/skills/agent-emo
-git commit -m "Add AgentEmo skill as submodule"
-
-# Team members clone with:
-git clone --recurse-submodules <your-repo-url>
-
-# Or if already cloned:
-git submodule update --init --recursive
-```
-
-### Method 5: For Trae IDE
+### For Trae IDE
 
 The skill is already formatted for Trae IDE. Simply ensure the `.trae/skills/agent-emo/SKILL.md` file is in your project root.
+
+```bash
+# Clone the repository
+git clone https://github.com/nooqle/agent-emo-skill.git
+
+# Copy to your project
+cp -r agent-emo-skill/.trae/skills/agent-emo .trae/skills/
+```
 
 ## 📂 Files
 
 - `concept_design_cn.md` - Chinese concept design document
 - `concept_design_en.md` - English concept design document
 - `.trae/skills/agent-emo/SKILL.md` - Trae IDE skill format
-- `claude/agent_emo.md` - Claude Code MCP tool format
+- `.claude/skills/agent_emo.md` - Claude Code skill format (correct location)
+- `claude/agent_emo.md` - Source file for Claude Code
 - `CLAUDE.md` - Claude-specific project documentation
 - `README.md` - This documentation
 
