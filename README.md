@@ -41,27 +41,27 @@ AgentEmo addresses the **"Brain in a Vat"** dilemma in AI interaction - Agents p
 
 ### For Claude Code
 
-Claude Code loads skills from `.claude/skills/` directory.
+Claude Code loads skills from `~/.claude/skills/` directory with the structure: `skill_name/SKILL.md`
 
 **Method 1: Clone and Copy**
 
 ```bash
 git clone https://github.com/nooqle/agent-emo-skill.git
-cp agent-emo-skill/.claude/skills/agent_emo.md ~/.claude/skills/
+cp -r agent-emo-skill/.claude/skills/agent_emo ~/.claude/skills/
 ```
 
 **Method 2: Direct Download**
 
 ```bash
-mkdir -p ~/.claude/skills
-curl -o ~/.claude/skills/agent_emo.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo.md
+mkdir -p ~/.claude/skills/agent_emo
+curl -o ~/.claude/skills/agent_emo/SKILL.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo/SKILL.md
 ```
 
 **Method 3: Project-Specific**
 
 ```bash
-mkdir -p .claude/skills
-curl -o .claude/skills/agent_emo.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo.md
+mkdir -p .claude/skills/agent_emo
+curl -o .claude/skills/agent_emo/SKILL.md https://raw.githubusercontent.com/nooqle/agent-emo-skill/main/.claude/skills/agent_emo/SKILL.md
 ```
 
 ### For Trae IDE
